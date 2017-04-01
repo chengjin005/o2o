@@ -1,0 +1,73 @@
+{
+    "name": "首页",
+    "action": "portal/Index/index",
+    "description": "首页模板文件",
+    "order": 6.0,
+    "more": {
+        "vars": {
+            "test_select": {
+                "title": "您常用的ThinkCMF应用",
+                "value": "2",
+                "type": "select",
+                "options": {
+                    "1": "ThinkCMFX",
+                    "2": "ThinkCMF",
+                    "3": "跟猫玩糗事",
+                    "4": "门户应用"
+                },
+                "tip": "",
+                "rule": {
+                    "require": "require"
+                }
+            },
+            "features": {
+                "title": "特性介绍",
+                "value": [],
+                "type": "array",
+                "item": {
+                    "title": {
+                        "title": "标题",
+                        "value": "",
+                        "type": "text"
+                    },
+                    "icon": {
+                        "title": "图标",
+                        "value": "",
+                        "type": "text"
+                    },
+                    "content": {
+                        "title": "描述",
+                        "value": "",
+                        "type": "text"
+                    }
+                },
+                "tip": "",
+                "rule": {
+                    "require": true
+                }
+            }
+        },
+        "widgets": {
+            "last_news": {
+                "title": "最新资讯",
+                "display": "1",
+                "vars": {
+                    "last_news_category_id": {
+                        "title": "最新资讯分类ID",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "portal/category/index",
+                            "multi": true
+                        },
+                        "placeholder": "请选择分类",
+                        "tip": "",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

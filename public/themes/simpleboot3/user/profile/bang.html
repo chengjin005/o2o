@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$user_login}  - 绑定账号</title>
+<meta name="keywords" content=""/>
+<meta name="description" content="">
+<include file="public@head"/>
+</head>
+<body class="body-white" id="top">
+	<include file="public@nav" />
+
+	<div class="container tc-main">
+		<div class="row">
+			<div class="col-md-3">
+				<include file="public@usernav" />
+			</div>
+			<div class="col-md-9">
+				<div class="tabs">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#one" data-toggle="tab"><i class="fa fa-exchange"></i> 绑定账号</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="one">
+							<br>
+							<div>
+								<if condition="!empty($oauths['qq'])">
+									<button class="btn">
+										<i class="fa fa-qq"></i> 已绑定腾讯QQ账号
+									</button>
+								<else /> 
+									<a class="btn btn-primary" href="{:U('api/oauth/bang',array('type'=>'qq'))}"><i class="fa fa-qq"></i> 绑定腾讯QQ账号</a> 
+								</if>
+								<if condition="!empty($oauths['sina'])">
+									<button class="btn">
+										<i class="fa fa-weibo"></i> 已绑定新浪微博账号
+									</button>
+								<else /> 
+									<a class="btn btn-primary" href="{:U('api/oauth/bang',array('type'=>'sina'))}"><i class="fa fa-weibo"></i> 绑定新浪微博账号</a> 
+								</if>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="public@footer" />
+	</div>
+	<!-- /container -->
+	<include file="public@scripts" />
+</body>
+</html>
